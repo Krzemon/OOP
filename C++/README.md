@@ -12,8 +12,6 @@
 - lab08 - Progress bar w terminalu
 - lab09 - Klasy: Osoba i Pracownik - podejście obiektowe
 - lab10 - Complex Sorter - Szablony klas, przeciążanie operatorów, konstruktory kopiujące i przenoszące
-- lab11 - Extra Sorter - Szablony klas, przeciążanie operatorów, konstruktory kopiujące i przenoszące, std::vector
+- lab11 - Histogram wersja dla klas
 - lab12 - Funkcje matematyczne - Klasy abstrakcyjne, dziedziczenie dla 
-- lab13 - ZOO i zwierze - listy inicjalizacyjne
-- lab14 - Bar Code Reader
-- lab15 - Funkcje matematyczne - dziedziczenie, przeciążanie operatorów
+- lab13 - ZOO i zwierze - listy inicjalizacyjne, vector, dynamic_cast

@@ -68,7 +68,7 @@ void histogram(const char& tekstura, const int& liczba_binow, const int& wysokos
 
     for (int i = 0; i < 1000; ++i) {
         for (int j = 0; j < N; ++j)
-            tab[i] += static_cast<float>(rand()) / (RAND_MAX + 1.0f); // Generate random number in range [0,1)
+            tab[i] += static_cast<float>(rand()) / (RAND_MAX + 1.0f);
         tab[i] /= N;
         suma += tab[i];
         suma_kwadratow += tab[i] * tab[i];

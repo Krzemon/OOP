@@ -22,10 +22,10 @@ void wypiszWynik(WynikRownaniaKwadratowego* wynik);
 // Funkcja wypisująca liczbę zespoloną
 bool isNumber(const std::string& str);
 
-// Funkcja wypisująca liczbę zespoloną
+// Funkcja sprawdzająca czy liczba zespolona jest urojona
 bool jestUrojona(Zespolona* num);
 
-// Funkcja wypisująca liczbę zespoloną
+// Funkcja sprawdzająca czy liczba zespolona jest rzeczywista
 bool jestRzeczywista(Zespolona* num);
 
 #endif // ROWNANIE_KWADRATOWE_H

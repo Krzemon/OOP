@@ -10,14 +10,11 @@ private:
     double imag;
 
 public:
-    // konstruktory
     Complex();
     Complex(double real, double imag);
 
-    // Przeciążony operator mniejszości
     bool operator<(const Complex& other) const;
 
-    // zaprzyjaźniony operator << do wypisywania liczb zespolonych
     friend std::ostream& operator<<(std::ostream& os, const Complex& c);
 };
 

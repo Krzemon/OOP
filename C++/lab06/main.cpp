@@ -1,23 +1,22 @@
 #include "vector_matrix.h"
-#include <stdio.h>
+#include <iostream>
 
 int main() {
-    Vector *w1 = form_Vector();
-    
-    Matrix *m1 = form_Matrix(5, 14);
+    Vector<int>* w1 = form_Vector<int>();
+    Matrix<int>* m1 = form_Matrix<int>(5, 14);
 
-    printf("To jest napis - funkcja print działa. Działa też dla zmiennych typu bool:\n");
-    printf("1\n");
+    std::cout << "To jest napis - funkcja print działa. Działa też dla zmiennych typu bool:\n";
+    std::cout << "1\n";
 
-    printf("\nTo jest wektor:\n");
+    std::cout << "\nTo jest wektor:\n";
     print_Vector(w1);
-    printf("Adres tego wektora to:\n");
-    printf("%p\n", (void*)w1);
+    std::cout << "Adres tego wektora to:\n";
+    std::cout << w1 << std::endl;
 
-    printf("\nA to jest macierz:\n");
+    std::cout << "\nA to jest macierz:\n";
     print_Matrix(m1);
-    printf("Adres tej macierzy to:\n");
-    printf("%p\n", (void*)m1);
+    std::cout << "Adres tej macierzy to:\n";
+    std::cout << m1 << std::endl;
 
     delete_Vector(w1);
     delete_Matrix(m1);

@@ -26,6 +26,11 @@ int main() {
     jan.info();
     panJan.info();
 
+    Pracownik enio("Enio", 1988, placa[zwykly]);
+    Pracownik enioprezes("Prezes Enio", 1989, placa[prezes]);
+    enio.info();
+    enioprezes.info();
+    
     std::cout << "\nKoniec programu\n\n";
     return 0;
 }

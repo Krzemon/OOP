@@ -2,12 +2,12 @@
 #include <iostream>
 
 int main(int argc, char* argv[]){
-    char tekstura = '|';    // character representing the histogram
-    int liczba_binow = 50;  // number of bins
-    int wysokosc = 20;      // height of the histogram
-    float x_min = 0;        // lower range of random numbers
-    float x_max = 1;        // upper range of random numbers
-    int N = 2;              // number of numbers used for calculating the average
+    char tekstura = '|';
+    int liczba_binow = 50;
+    int wysokosc = 20;
+    float x_min = 0;
+    float x_max = 1;
+    int N = 2;
 
     if(argc > 1)
         switches(tekstura, liczba_binow, wysokosc, x_min, x_max, N, argc, argv);

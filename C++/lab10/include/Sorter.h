@@ -13,17 +13,13 @@ private:
     int size;
 
 public:
-    // konstruktory i destruktor
     Sorter(int capacity);
     Sorter(const Sorter<T>& other);
     Sorter(Sorter<T>&& other) noexcept; 
     ~Sorter();
 
-    // Metoda dodająca elementy do tablicy
     void add(std::initializer_list<T> list);
-    // Metoda sortująca elementy tablicy
     void sort();
-    // Metoda wypisująca elementy tablicy
     void print() const;
 };
 

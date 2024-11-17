@@ -22,8 +22,8 @@ namespace Statki {
 
   // Struktura statku
   struct Statek{
-    int n; // Rozmiar statku
-    Pozycja *koordynaty = nullptr; // Koordynaty statku
+    int n;
+    Pozycja *koordynaty = nullptr;
   };
 
   // Struktura planszy, która zawiera statki
