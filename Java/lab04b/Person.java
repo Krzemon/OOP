@@ -1,12 +1,12 @@
 public class Person {
-    private String name;   // imie
-    private String street; // ulica
-    private int number;    // numer adresu
+    private String name;
+    private String street;
+    private int number;
 
     public Person(String name, String street, int num){
-        this.setName(name);
-        this.setStreet(street);
-        this.setNumber(num);
+        setName(name);
+        setStreet(street);
+        setNumber(num);
     }
 
     // gettery
@@ -39,14 +39,12 @@ public class Person {
         System.out.println("--------------------------");   
     }
 
-
     // konstruktor kopiujacy plytki
 	public Person (Person other){
         this.setName(other.getName());
         this.setStreet(other.getStreet());
         this.setNumber(other.getNumber());
 	}
-
 
     // konstruktor kopiujacy gleboki
 	public Person (Person other, int a){

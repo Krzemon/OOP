@@ -6,13 +6,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("enter your name: ");
-        String name = new String(scanner.nextLine());
+        String name = scanner.nextLine();
         System.out.println("enter your street: ");
-        String street = new String(scanner.nextLine());
+        String street = scanner.nextLine();
         System.out.println("enter your address number: ");
         int num = scanner.nextInt();
-
-
 
         Person person_1 = new Person(name, street, num);
     
@@ -20,15 +18,21 @@ public class Main {
          
         Person person_3 = new Person(person_1, 0);
 
+        // Zmiana pól street i number w płytkiej kopii
+        person_2.setStreet("New Street");
+        person_2.setNumber(99);
 
-        // wyswietlenie wyniku
-        System.out.println("Oryginal:");
+        // Zmiana pól street i number w głębokiej kopii
+        person_3.setStreet("Different Street");
+        person_3.setNumber(100);
+        
+        // Wyświetlanie wyników
+        System.out.println("Original:");
         person_1.printDetails();
-        System.out.println("Plytka kopia:");
+        System.out.println("Shallow Copy:");
         person_2.printDetails();
-        System.out.println("Gleboka kopia:");
+        System.out.println("Deep Copy:");
         person_3.printDetails();
-
         
     }
 }
