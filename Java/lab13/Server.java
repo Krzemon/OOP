@@ -18,53 +18,53 @@ public class Server {
     // metoda dla ładowania pliku
     public void loadFile(){
         try {
-            final File initialFile = new File("./sendThisFile.txt"); // sprawdź, czy ten plik istnieje
+            final File initialFile = new File("./sendThisFile.txt");
+            // final InputStream targetStream =...
             final FileInputStream fileInputStream = new FileInputStream(initialFile);
             this.dataSendStream = new DataInputStream(fileInputStream);
         } catch (IOException e) {
-            System.out.println("Failed with loading data: " + e.toString());
+            System.out.println("Failed with load data" + e.toString());
         }
     }
 
-    // metoda do wysyłania pliku
-    public static void sendFile(String filePath) {
+    // metoda do wysylania pliku
+    public static void sendFile(String filePath){
         try {
             byte[] buffer = new byte[4096];
             FileInputStream fileInputStream = new FileInputStream(filePath);
-            int bytes;
-            while ((bytes = fileInputStream.read(buffer)) != -1) {
-                dataOutputStream.write(buffer, 0, bytes); // wysyłanie pliku w porcjach
-            }
-            fileInputStream.close();
+            int bytes = fileInputStream.read(buffer,0,buffer.length);
+            dataOutputStream.write(buffer,0,bytes);
         } catch (IOException e) {
-            System.out.println("Failed with sending data: " + e.toString());
+            System.out.println("Failed with send data" + e.toString());
         }
     }
 
-    public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(12345)) {
-            System.out.println("Listening on port: 12345");
-            Socket clientSocket = serverSocket.accept(); // oczekiwanie na połączenie od klienta
+    public static void main(String[] args) throws Exception {
+        try(ServerSocket serverSocket = new ServerSocket(12345)){
+            System.out.println("listening to port: 12345");
+            Socket clientSocket = serverSocket.accept();
             System.out.println(clientSocket + " connected\n");
-            
             dataInputStream = new DataInputStream(clientSocket.getInputStream());
             dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
 
             String message;
             while (true) {
                 message = dataInputStream.readUTF();
-                System.out.println("Received message: " + message);
+                System.out.println(message);
+                
 
-                if (message.equalsIgnoreCase("exit()")) {
+                if(message.equalsIgnoreCase("exit()"))
                     break;
-                }
             }
 
             clientSocket.close();
-        } catch (Exception e) {
-            System.out.println("Error with sockets: " + e.toString());
-        } finally {
-            sendFile("./sendThisFile.txt"); // wysyłanie pliku
+
+        } catch (Exception e){
+            System.out.println("Failed with sockets" + e.toString());
+        }
+        finally{
+            sendFile("./sendThisFile.txt");
         }
     }
+
 }

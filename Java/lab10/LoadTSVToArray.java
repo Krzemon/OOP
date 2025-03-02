@@ -7,26 +7,33 @@ public class LoadTSVToArray {
 
     public static int size;
     ArrayList<String[]> data;
+    public boolean is_first = true;
 
-    public LoadTSVToArray(String filePath) {
+    public LoadTSVToArray() {
+        String filePath = "dictionary.txt";
         this.data = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] values = line.split("\t");
+                String[] values = line.split(",");
+                if(is_first){
+                    this.is_first = false;
+                    continue;
+                }
+                
                 data.add(values);
             }
         } catch (IOException e) {
-            System.out.println("Error opening the file: " + e.getMessage());
-            return;
+            e.printStackTrace();
         }
 
-        size = data.size();
+        LoadTSVToArray.size = data.size();
+
     }
 
-    public String[][] getDataArray() {
-        String[][] dataArray = new String[size][];
+    public String[][] getDataArray(){
+        String[][] dataArray = new String[LoadTSVToArray.size][];
         data.toArray(dataArray);
 
         return dataArray;

@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         String filePath = "some_math.txt";
         LoadTSVToArray loader = new LoadTSVToArray(filePath);
-        
-        if (loader.getData().isEmpty()) {
+
+        if (loader.data.isEmpty()) {
             System.out.println("No data found in the file.");
             return;
         }

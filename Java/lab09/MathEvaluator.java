@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 class SyntaxErrorException extends Exception {
     public SyntaxErrorException(String message) {
         super(message);
@@ -14,13 +17,13 @@ public class MathEvaluator {
 
     public static void evaluateExpression(String expression) {
         try {
-            if (!expression.matches("[0-9+\\-\\*/()=\\s]+")) {
+            if (!expression.matches("[0-9+\\-*/()=\\s]+")) {
                 throw new IllegalCharacterException("illegal characters");
             }
 
             if (expression.contains("=")) {
                 String[] parts = expression.split("=");
-                if (parts.length != 2 || parts == null) {
+                if (parts.length != 2) {
                     throw new SyntaxErrorException("syntax error: = expected");
                 }
             }
