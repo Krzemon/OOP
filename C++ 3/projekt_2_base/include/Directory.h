@@ -1,0 +1,16 @@
+#pragma once
+#include "FileSystemElement.h"
+#include <vector>
+#include <memory>
+#include <string>
+
+class Directory : public FileSystemElement {
+private:
+    std::string name;
+    std::vector<std::unique_ptr<FileSystemElement>> elements;
+
+public:
+    explicit Directory(const std::string& name);
+    void addElement(std::unique_ptr<FileSystemElement> element);
+    void print(std::ostream& os, int indent) const override;
+};
