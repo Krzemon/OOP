@@ -1,11 +1,8 @@
 #pragma once
-#include "FileSystemElement.h"
+#include "File.h"
 
-class Link : public FileSystemElement {
-    std::string name; // nazwa dowiązania
+class Link : public File {
     FileSystemElement* target; // wskaźnik do elementu docelowego
-    int permissions; // uprawnienia
-    std::string modDate; // data modyfikacji
 public:
     /** 
      * @brief Konstruktor klasy Link

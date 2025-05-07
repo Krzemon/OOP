@@ -2,10 +2,8 @@
 #include "FileSystemElement.h"
 
 class File : public FileSystemElement {
-    std::string name; // nazwa pliku
-    int permissions; // uprawnienia
     int size; // rozmiar 
-    std::string modDate; // data modyfikacji
+
 public:
     /**
      * @brief Konstruktor klasy File

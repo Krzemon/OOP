@@ -1,8 +1,7 @@
 #include "File.h"
 #include <iostream>
 
-File::File(const std::string& name)
-    : name(name), permissions(0666), size(1), modDate("2025-05-05") {}
+File::File(const std::string& name): FileSystemElement(name) {}
 
 void File::print(std::ostream& os, int indent) const {
     os << std::string(indent, ' ') << "File: " << name << "\n";

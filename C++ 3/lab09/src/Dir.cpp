@@ -5,8 +5,7 @@
 #include <typeinfo>
 #include <algorithm>
 
-Dir::Dir(const std::string& name)
-    : name(name), permissions(0777), modDate("2025-05-05") {}
+Dir::Dir(const std::string& name): FileSystemElement(name) {}
 
 void Dir::add(std::unique_ptr<FileSystemElement> element) {
     elements.push_back(std::move(element));
@@ -84,10 +83,6 @@ void Dir::rm(std::string name, bool removeTarget) {
         }
     }
 }
-
-
-
-// poza klasa
 
 std::ostream& operator<<(std::ostream& os, const Dir& dir) {
     dir.print(os, 0);

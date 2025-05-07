@@ -4,10 +4,8 @@
 #include <memory>
 
 class Dir : public FileSystemElement {
-    std::string name; // nazwa katalogu
-    int permissions; // uprawnienia
     std::vector<std::unique_ptr<FileSystemElement>> elements; // elementy katalogu
-    std::string modDate; // data modyfikacji
+
 public:
     /**
      * @brief Konstruktor klasy Dir
