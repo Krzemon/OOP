@@ -7,11 +7,11 @@
 
 struct B {
 protected:
-  friend std::ostream& operator<<(std::ostream& os, const B& o) const;
-  virtual std::ostream& printOn(std::ostream& os) const = 0;
+  friend std::ostream& operator<<(std::ostream& os, const B& o);
+  virtual std::ostream& printOn(std::ostream& os) const;
 };
 
-std::ostream& operator<<(std::ostream& os, const B& o) const {
+std::ostream& operator<<(std::ostream& os, const B& o)  {
     return o.printOn(os);
 }
 
